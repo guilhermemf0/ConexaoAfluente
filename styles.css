@@ -1,0 +1,85 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis de cor */
+:root {
+  --primary-color: #d59217;
+  --secondary-color: #f0f0f0;
+  --text-color: #000000;
+  --hover-color: #1e00ff;
+  --background: #ffffff;
+}
+
+/* Corpo */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+/* Nav bar */
+#navbar {
+  background-color: var(--primary-color);
+  padding: 2rem 15rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Container da nav */
+#navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* Menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Links */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--hover-color);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--hover-color);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
